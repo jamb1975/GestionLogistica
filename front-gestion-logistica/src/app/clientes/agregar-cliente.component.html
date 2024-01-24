@@ -1,0 +1,53 @@
+
+<div class="host">
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel   [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Login
+      </mat-panel-title>
+      <mat-panel-description>
+        Digite Información Clientes
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div >
+    <form name="form" role="form" (submit)="save()">
+      <div class="example-container">
+        <mat-form-field>
+          <mat-label>Nombres</mat-label>
+          <input id="nombres" name="nombres" [(ngModel)]="cliente.nombres" matInput>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>N° Identificación</mat-label>
+          <input id="no_identificacion" name="no_identificacion" [(ngModel)]="cliente.no_identificacion" matInput>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>N° Teléfono</mat-label>
+          <input matInput id="no_telefono" name="no_telefono"  required [(ngModel)]="cliente.no_telefono">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint>Include area code</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input  matInput id="email" name="email" placeholder="pat@example.com" [formControl]="email" required [(ngModel)]="cliente.email">
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Dirección</mat-label>
+          <input id="direccion" name="direccion" [(ngModel)]="cliente.direccion" matInput>
+        </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+  </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+

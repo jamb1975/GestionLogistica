@@ -1,0 +1,103 @@
+
+<div class="host">
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel   [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Logística Marítima
+        </mat-panel-title>
+        <mat-panel-description>
+          Digite Información Logística
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div >
+      <form name="form" role="form" (submit)="save()">
+        <div class="example-container">
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Cantidad</mat-label>
+            <input id="cantidadProducto" name="cantidadProducto" [(ngModel)]="logistica.cantidadProducto" matInput #cantidadProducto maxlength="10" placeholder="Cantidad" value="0" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Cliente</mat-label>
+            <input type="text"
+                   placeholder="Escoja un Cliente"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto" id="clienteId" name="clienteId" [(ngModel)]="logistica.clienteId" required>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Tipo Producto</mat-label>
+            <input type="text"
+                   placeholder="Tipo productos"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl2"
+                   [matAutocomplete]="autoTipoProductos" id="tipoProductosId" name="tipoProductosId" [(ngModel)]="logistica.tipoProductosId" required>
+            <mat-autocomplete autoActiveFirstOption #autoTipoProductos="matAutocomplete">
+              <mat-option *ngFor="let option2 of filteredOptions2 | async" [value]="option2">
+                {{option2}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Puerto</mat-label>
+            <input type="text"
+                   placeholder="Puerto"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl4"
+                   [matAutocomplete]="autoPuerto" id="puerto" name="puerto" [(ngModel)]="logistica.puertosMaritimosId" required>
+            <mat-autocomplete autoActiveFirstOption #autoPuerto="matAutocomplete">
+              <mat-option *ngFor="let option4 of filteredOptions4 | async" [value]="option4">
+                {{option4}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Fecha Registro</mat-label>
+            <input matInput placeholder="YYYY-MM-DDTHH:MM:SS" id="fechaRegistro" name="fechaRegistro" [(ngModel)]="logistica.fechaRegistro"   required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Fecha Entrega</mat-label>
+            <input matInput placeholder="YYYY-MM-DDTHH:MM:SS" id="fechaEntrega" name="fechaEntrega" [(ngModel)]="logistica.fechaEntrega"  required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Precio Envío</mat-label>
+            <input id="precioEnvio" (blur)="onBlur()" name="precioEnvio" [(ngModel)]="logistica.precioEnvio" matInput #precioEnvio maxlength="50" placeholder="Precio Envío" value="0" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Valor Descuento</mat-label>
+            <input id="valorDescuento"  name="valorDescuento" [(ngModel)]="logistica.valorDescuento" matInput #valorDescuento maxlength="50" placeholder="Valor Descuento" value="0">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Valor Total</mat-label>
+            <input id="valorTotal"  name="valorTotal" [(ngModel)]="logistica.valorTotal" matInput #valorTotal maxlength="50" placeholder="Valor Total" value="0">
+          </mat-form-field>
+          <mat-form-field hintLabel="Min y Max 10 dígitos">
+            <mat-label>Número Flota</mat-label>
+            <input matInput #input maxlength="7" minlength="7" id="numeroFlota" name="numeroFlota" [(ngModel)]="logistica.numeroFlota"   placeholder="ABC1234" required>
+            <mat-hint align="end">{{input.value.length}}/7</mat-hint>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Nº Guía</mat-label>
+            <input id="numeroGuia" name="numeroGuia" [(ngModel)]="logistica.numeroGuia" matInput #numeroGuia maxlength="10"  minlength="10" placeholder="Nº Guía" value="0" required>
+            <mat-hint align="end">{{numeroGuia.value.length}}/10</mat-hint>
+          </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+    </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+

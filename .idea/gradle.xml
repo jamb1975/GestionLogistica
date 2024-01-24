@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/authenticate-server" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../gradle/gradle-8.1.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/authenticate-server" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/gestion_logistica" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../gradle/gradle-8.1.1" />
+        <option name="gradleJvm" value="liberica-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/gestion_logistica" />
+            <option value="$PROJECT_DIR$/gestion_logistica/apps/app" />
+            <option value="$PROJECT_DIR$/gestion_logistica/dominio/model" />
+            <option value="$PROJECT_DIR$/gestion_logistica/dominio/usecase" />
+            <option value="$PROJECT_DIR$/gestion_logistica/infraestructura/manejo-adaptadores/r2dbc-postgresql" />
+            <option value="$PROJECT_DIR$/gestion_logistica/infraestructura/manejo-adaptadores/reactor-rest-consumer" />
+            <option value="$PROJECT_DIR$/gestion_logistica/infraestructura/puntos-entrada/reactor-rest-servicios" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

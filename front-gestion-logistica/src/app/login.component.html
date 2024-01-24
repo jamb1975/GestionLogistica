@@ -1,0 +1,40 @@
+
+<!----
+  Autor: Javier Murcia
+-->
+<div class="host">
+<mat-accordion class="example-headers-align">
+<mat-expansion-panel   [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Login
+    </mat-panel-title>
+    <mat-panel-description>
+      Digite su Usuario y Password
+      <mat-icon>account_circle</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div >
+  <form role="form" (submit)="login()">
+    <div class="example-container">
+      <mat-form-field>
+        <mat-label>Usuario</mat-label>
+        <input id="username" name="username" [(ngModel)]="credentials.username" matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" id="password" name="password" [(ngModel)]="credentials.password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Sign In</button>
+    </div>
+  </form>
+</div>
+</mat-expansion-panel>
+</mat-accordion>
+</div>
+

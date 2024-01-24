@@ -1,0 +1,26 @@
+
+<div class="host" [hidden]="!authenticated()">
+
+
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Menu</mat-card-title>
+        <mat-card-subtitle>Iniciar</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions >
+        <div class="example2">
+        <a mat-flat-button color="basic" routerLinkActive="active" routerLink="/clientes">Clientes</a>
+        <a mat-flat-button color="basic" routerLinkActive="active" routerLink="/clientes">Tipo productos</a>
+        <a mat-flat-button color="basic" routerLinkActive="active" routerLink="/clientes">Bodegas</a>
+        <a mat-flat-button color="basic" routerLinkActive="active" routerLink="/clientes">Puertos Marítimos</a>
+        <a mat-flat-button color="basic" routerLinkActive="active" routerLink="/clientes">Logística  Terrestre</a>
+        <a mat-flat-button color="basic" routerLinkActive="active" routerLink="/logistica">Logística  Marítima</a>
+      </div>
+      </mat-card-actions>
+
+    </mat-card>
+</div>
+<div [hidden]="authenticated()">
+	<p>Login to see your greeting</p>
+</div>

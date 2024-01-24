@@ -1,0 +1,39 @@
+<div class="demo-button-container">
+    <button class="demo-button" mat-raised-button color="primary" (click)="irAgregar()">+ Agregar</button>
+  </div>
+  <table mat-table [dataSource]="logisticas" class="mat-elevation-z8 demo-table">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id.</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="fechaRegistro">
+      <th mat-header-cell *matHeaderCellDef>Fecha Registro</th>
+      <td mat-cell *matCellDef="let element">{{element.fechaRegistro}}</td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="fechaEntrega">
+      <th mat-header-cell *matHeaderCellDef>Fecha Entrega</th>
+      <td mat-cell *matCellDef="let element">{{element.fechaEntrega}}</td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="precioEnvio">
+      <th mat-header-cell *matHeaderCellDef>Precio Envío</th>
+      <td mat-cell *matCellDef="let element">{{element.precioEnvio}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="numeroFlota">
+        <th mat-header-cell *matHeaderCellDef>Número Flota</th>
+        <td mat-cell *matCellDef="let element">{{element.numeroFlota}}</td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
+  
